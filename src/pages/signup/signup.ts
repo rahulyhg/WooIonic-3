@@ -88,7 +88,7 @@ export class Signup {
       let respons = (JSON.parse(data.body));
 
       if(respons.customer){
-        this.alert
+        this.alertCtrl
       }
     })
   }
