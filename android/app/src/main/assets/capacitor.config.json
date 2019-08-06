@@ -1,0 +1,7 @@
+{
+  "appId": "com.masterclass.tunecreativestudio",
+  "appName": "WooIonic",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

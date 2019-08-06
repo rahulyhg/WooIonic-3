@@ -3,16 +3,60 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Master Class</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+<ion-content no-padding>
+  <ion-card>
+    <ion-slides autoplay="3000" pager>
+      <ion-slide>
+        <img src="http://placehold.it/500x300" />
+      </ion-slide>
+      <ion-slide>
+        <img src="http://placehold.it/500x300" />
+      </ion-slide>
+      <ion-slide>
+        <img src="http://placehold.it/500x300" />
+      </ion-slide>
+      <ion-slide>
+        <img src="http://placehold.it/500x300" />
+      </ion-slide>
+    </ion-slides> 
+  </ion-card>
+  <img src="http://placehold.it/400x100" alt="">
+  <ion-grid>
+    <ion-row>
+      <ion-slides #productSlides>
+        <ion-slide *ngFor="let product of products">
+          <ion-card no-padding>
+            <img [src]="product.featured_src" />
+            <h1> {{product.title}}</h1>
+            <p center padding [innerHTML]="product.short_description"> </p>
+            
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+  </ion-grid>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<ion-list>
+  <ion-item *ngFor="let product of moreProducts" text-wrap (click)="openProductPage(product)">
+    <ion-thumbnail item-left>
+      <img [src]="product.featured_src" />
+    </ion-thumbnail>
+    <h2>{{ product.title }}</h2>
+    <p> 
+      <span  [innerHTML]="product.short_description.substr(n,50)"> </span>
+      <span  [innerHTML]="product.price_html"> </span>
+    </p>
+    <button ion-button icon clear item-right>
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </ion-item>
+</ion-list>
+<ion-infinite-scroll (ionInfinite)="loadMoreProducts($event)">
+  <ion-infinite-scroll-content></ion-infinite-scroll-content>
+</ion-infinite-scroll>
+  
 </ion-content>

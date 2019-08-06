@@ -1,3 +1,19 @@
 page-home {
 
 }
+
+ion-card{
+    margin: 0 !important;
+    width: 100% !important;
+
+    ion-slider{
+        ion-slide{
+            img{
+
+                width: 100% !important;
+    
+            }
+        }
+    }
+}
+

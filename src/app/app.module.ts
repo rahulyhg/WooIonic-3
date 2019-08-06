@@ -4,26 +4,42 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { ListPage } from '../pages/list/list';
-
+import { Menu } from '../pages/menu/menu';
+import { ProductsByCategory } from '../pages/products-by-category/products-by-category';
+import { ProductDetails } from "../pages/product-details/product-details";
+import { CartPage } from '../pages/cart/cart';
+import { Signup } from '../pages/signup/signup';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    Menu,
+    ProductsByCategory,
+    ProductDetails,
+    CartPage,
+    Signup,
+  
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    Menu,
+    ProductsByCategory,
+    ProductDetails,
+    CartPage,
+    Signup,
+ 
   ],
   providers: [
     StatusBar,

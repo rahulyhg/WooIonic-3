@@ -1,5 +1,8 @@
 {
   "name": "WooIonic",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "ionic-angular"
 }
